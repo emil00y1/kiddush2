@@ -296,14 +296,14 @@ console.log(data);
       console.log("slayed");
       this.classList.toggle("active");
       contents[index].classList.toggle("active");
-
-      arrows.forEach((arrow, arrowIndex) => {
-        if (arrowIndex === index) {
-          arrow.classList.toggle("active");
-        } else {
-          arrow.classList.remove("active");
-        }
-      });
+      this.lastElementChild.classList.toggle("active");
+      // arrows.forEach((arrow, arrowIndex) => {
+      //   if (arrowIndex === index) {
+      //     arrow.classList.toggle("active");
+      //   } else {
+      //     arrow.classList.remove("active");
+      //   }
+      // });
     });
   });
 </script>
