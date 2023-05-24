@@ -28,15 +28,22 @@ console.log(data);
 </article>
 
 <style>
-  article {
-    padding: 14px;
-    max-height: 134px;
-    overflow: hidden;
+  article.active .cardcontent {
+    max-height: 1000px;
+    padding-top: 30px;
+    padding-bottom: 60px;
+    visibility: visible;
   }
 
-  article.active {
-    max-height: 1000px;
+  article {
+    padding: 14px;
+    /* max-height: 134px;
+    overflow: hidden; */
   }
+
+  /* article.active {
+    max-height: 1000px;
+  } */
   .cardheader {
     display: flex;
     padding: 0 20px;
@@ -45,8 +52,10 @@ console.log(data);
     z-index: 3;
   }
   .cardcontent {
-    padding-top: 30px;
-    padding-bottom: 60px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    visibility: hidden;
   }
 
   .flex {
@@ -278,12 +287,23 @@ console.log(data);
 </style>
 
 <script>
-  const arrow = document.querySelector(".barbox");
-  const content = document.querySelector("article");
+  const open = document.querySelectorAll(".cardheader");
+  const contents = document.querySelectorAll("article");
+  const arrows = document.querySelectorAll(".barbox");
 
-  arrow.addEventListener("click", function () {
-    console.log("slayed");
-    this.classList.toggle("active");
-    content.classList.toggle("active");
+  open.forEach((open, index) => {
+    open.addEventListener("click", function () {
+      console.log("slayed");
+      this.classList.toggle("active");
+      contents[index].classList.toggle("active");
+
+      arrows.forEach((arrow, arrowIndex) => {
+        if (arrowIndex === index) {
+          arrow.classList.toggle("active");
+        } else {
+          arrow.classList.remove("active");
+        }
+      });
+    });
   });
 </script>
