@@ -131,6 +131,7 @@ const notComingSoonData = data.filter((item) => item.comingsoon === false);
     position: relative;
     overflow: hidden;
     z-index: 0;
+    margin-top: 5rem;
   }
 
   .cards {
@@ -144,6 +145,12 @@ const notComingSoonData = data.filter((item) => item.comingsoon === false);
   @media (max-width: 800px) {
     .cards {
       max-width: 190px;
+    }
+  }
+
+  @media (min-width: 800px) {
+    .cards {
+      max-width: 650px;
     }
   }
 
@@ -198,46 +205,56 @@ const notComingSoonData = data.filter((item) => item.comingsoon === false);
     const previousBtn = slider.querySelector(".previous");
     const nextBtn = slider.querySelector(".next");
     const cardWidth =
-      cardsContainer.offsetWidth +
+      cardsContainer.firstElementChild.offsetWidth +
       parseFloat(
         getComputedStyle(cardsContainer.firstElementChild).marginRight
       );
+    let isScrolling = false; // Track scrolling state
 
     previousBtn.addEventListener("click", () => {
-      const scrollAmount =
-        Math.floor(cardsContainer.scrollLeft / cardWidth - 1) * cardWidth;
-      cardsContainer.scrollTo({
-        left: scrollAmount,
-        behavior: "smooth",
-      });
-    });
+      if (!isScrolling) {
+        isScrolling = true;
+        const scrollAmount = Math.max(cardsContainer.scrollLeft - cardWidth, 0);
 
-    nextBtn.addEventListener("click", () => {
-      const maxScrollLeft =
-        cardsContainer.scrollWidth - cardsContainer.offsetWidth;
-      const currentScrollLeft = cardsContainer.scrollLeft;
-      const scrollAmount = currentScrollLeft + cardWidth;
-
-      if (scrollAmount > maxScrollLeft) {
-        cardsContainer.scrollTo({
-          left: 0,
-          behavior: "smooth",
-        });
-      } else {
         cardsContainer.scrollTo({
           left: scrollAmount,
           behavior: "smooth",
         });
 
-        // Wait for the scroll animation to finish, then snap to the next product
+        // Reset scrolling state after a short delay
         setTimeout(() => {
-          const nextProductIndex = Math.ceil(scrollAmount / cardWidth);
-          const nextScrollLeft = nextProductIndex * cardWidth;
+          isScrolling = false;
+        }, 300);
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (!isScrolling) {
+        isScrolling = true;
+        const maxScrollLeft =
+          cardsContainer.scrollWidth - cardsContainer.offsetWidth;
+        const scrollAmount = Math.min(
+          cardsContainer.scrollLeft + cardWidth,
+          maxScrollLeft
+        );
+
+        if (scrollAmount === maxScrollLeft) {
+          // Scroll back to the beginning of the slider
           cardsContainer.scrollTo({
-            left: nextScrollLeft,
+            left: 0,
             behavior: "smooth",
           });
-        }, 1); // Adjust the delay if needed
+        } else {
+          cardsContainer.scrollTo({
+            left: scrollAmount,
+            behavior: "smooth",
+          });
+        }
+
+        // Reset scrolling state after a short delay
+        setTimeout(() => {
+          isScrolling = false;
+        }, 300);
       }
     });
   });
