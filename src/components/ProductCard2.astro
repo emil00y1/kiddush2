@@ -5,7 +5,7 @@ console.log(data);
 ---
 
 <article data-category={data.category} class="product_card">
-  <a href="#"
+  <a href={`products/${data.slug}`}
     ><img
       src={`/img/products/${data.img}.webp`}
       alt={`Can of ${data.name}`}
