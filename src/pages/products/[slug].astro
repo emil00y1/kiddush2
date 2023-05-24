@@ -30,12 +30,15 @@ const { myData } = Astro.props;
       <span class="arrow"></span>
       <span class="streg"></span>
       <p class="back">Back</p>
-    </div></a
-  >
-  <div class="indhold">
-    <div class="img_container">
-      <img src={`/img/products/${myData.img}.webp`} alt={`Can of ${myData.name}`} />
     </div>
+  </a >
+  <div class="indhold">
+    <section>
+    <div class="img_container">
+      <img class="product_img" src={`/img/products/${myData.img}.webp`} alt={`Can of ${myData.name}`} />
+    </div>
+   </section>
+   <section>
     <p class="brand">{myData.brand}</p>
     <h1 id="h1_slug">{myData.name}</h1>
     <p class="price">{myData.price + ",00 DKK"}</p>
@@ -56,6 +59,7 @@ const { myData } = Astro.props;
     <p>{"Alc." + myData.volume + "% vol."}</p>
     <br />
     <p>Brewing good beer takes time - enjoy it with care and dedication. Alone, or in good company.</p>
+   </section>
   </div>
 </MainLayout>
 
@@ -184,6 +188,47 @@ const { myData } = Astro.props;
     margin-left: 14px;
     margin-right: 14px;
   }
+
+  @media (min-width:800px){
+
+    .indhold{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+.product_img{
+  width: 272px;
+}
+
+.back_container{
+  margin-left: 20px;
+}
+.back{
+  top: -2px;
+}
+
+.brand{
+  text-align: left;
+}
+
+#h1_slug{
+  text-align: left;
+  padding-bottom: 0px;
+}
+
+.price{
+  text-align: left;
+}
+
+.container {
+    width: 262px;
+    height: 50px;
+    border-radius: 11px;
+    border: 2px solid;
+  }
+
+  }
+
+
 </style>
 
 <script type="text/javascript">
