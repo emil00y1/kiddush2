@@ -5,16 +5,12 @@ import Button from "../../components/Button.astro";
 import Header from "../../components/Header.astro";
 
 export async function getStaticPaths() {
-  const data = await fetch(
-    "https://syezauaectamogglkmvc.supabase.co/rest/v1/products?order=id.asc",
-    {
-      method: "GET",
-      headers: {
-        apikey:
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN5ZXphdWFlY3RhbW9nZ2xrbXZjIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQ0OTcyODUsImV4cCI6MjAwMDA3MzI4NX0.5CbbGAvqETjhd1_tbVm-oa-4F_JHliJV0Xuy_dG2rms",
-      },
-    }
-  ).then((response) => response.json());
+  const data = await fetch("https://syezauaectamogglkmvc.supabase.co/rest/v1/products?order=id.asc", {
+    method: "GET",
+    headers: {
+      apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN5ZXphdWFlY3RhbW9nZ2xrbXZjIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQ0OTcyODUsImV4cCI6MjAwMDA3MzI4NX0.5CbbGAvqETjhd1_tbVm-oa-4F_JHliJV0Xuy_dG2rms",
+    },
+  }).then((response) => response.json());
 
   return data.map((product) => {
     return {
@@ -30,42 +26,37 @@ const { myData } = Astro.props;
 <MainLayout id="landing">
   <Header slot="header" />
   <a href="javascript:void(0)" onclick="goBack()">
-  <div class="back_container">
-    <span class="arrow"></span>
-    <span class="streg"></span>
-    <p class="back">Back</p>
-  </div></a>
+    <div class="back_container">
+      <span class="arrow"></span>
+      <span class="streg"></span>
+      <p class="back">Back</p>
+    </div></a
+  >
   <div class="indhold">
-  <div class="img_container">
-    <img
-      src={`/img/products/${myData.img}.webp`}
-      alt={`Can of ${myData.name}`}
-    />
-  </div>
-  <p class="brand">{myData.brand}</p>
-  <h1 id="h1_slug">{myData.name}</h1>
-  <p class="price">{myData.price + ",00 DKK"}</p>
-  <div class="antal">
-    <div class="container">
-      <span class="prev" onclick="decreaseQuantity()">-</span>
-      <span id="quantity">1</span>
-      <span class="next" onclick="increaseQuantity()">+</span>
+    <div class="img_container">
+      <img src={`/img/products/${myData.img}.webp`} alt={`Can of ${myData.name}`} />
     </div>
-    <Button text="ADD TO CART" href="#" type="index" />
+    <p class="brand">{myData.brand}</p>
+    <h1 id="h1_slug">{myData.name}</h1>
+    <p class="price">{myData.price + ",00 DKK"}</p>
+    <div class="antal">
+      <div class="container">
+        <span class="prev" onclick="decreaseQuantity()">-</span>
+        <span id="quantity">1</span>
+        <span class="next" onclick="increaseQuantity()">+</span>
+      </div>
+      <Button text="ADD TO CART" href="#" type="index" />
+    </div>
+    <p>{myData.description}</p>
+    <br />
+    <p class="ingredients">Ingredients</p>
+    <p>{myData.ingredients}</p>
+    <p>{myData.type}</p>
+    <p>Netto 500ml</p>
+    <p>{"Alc." + myData.volume + "% vol."}</p>
+    <br />
+    <p>Brewing good beer takes time - enjoy it with care and dedication. Alone, or in good company.</p>
   </div>
-  <p>{myData.description}</p>
-  <br />
-  <p class="ingredients">Ingredients</p>
-  <p>{myData.ingredients}</p>
-  <p>{myData.type}</p>
-  <p>Netto 500ml</p>
-  <p>{"Alc." + myData.volume + "% vol."}</p>
-  <br />
-  <p>
-    Brewing good beer takes time - enjoy it with care and dedication. Alone, or
-    in good company.
-  </p>
-</div>
 </MainLayout>
 
 <style>
@@ -103,8 +94,9 @@ const { myData } = Astro.props;
     font-size: 23px;
   }
 
-  .indhold{
+  .indhold {
     margin-top: 50px;
+    margin-bottom: 50px;
   }
   .brand {
     color: var(--text2);
@@ -195,10 +187,9 @@ const { myData } = Astro.props;
 </style>
 
 <script type="text/javascript">
-
-function goBack() {
-  history.back();
-}
+  function goBack() {
+    history.back();
+  }
 
   let quantity = 1;
   const quantityElement = document.getElementById("quantity");
