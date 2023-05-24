@@ -139,7 +139,12 @@ const notComingSoonData = data.filter((item) => item.comingsoon === false);
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
     flex-wrap: nowrap; /* Added */
-    max-width: 190px;
+  }
+
+  @media (max-width: 800px) {
+    .cards {
+      max-width: 190px;
+    }
   }
 
   .control {
