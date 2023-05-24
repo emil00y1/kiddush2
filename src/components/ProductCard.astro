@@ -6,11 +6,7 @@ console.log(data);
 
 <article data-category={data.category} class="product_card">
   <a href={`products/${data.slug}`}
-    ><img
-      src={`/img/products/${data.img}.webp`}
-      alt={`Can of ${data.name}`}
-      class=`${data.category}`
-    />
+    ><img src={`/img/products/${data.img}.webp`} alt={`Can of ${data.name}`} class=`${data.css}` />
     <h3>{data.name}</h3>
     <p class="info">{data.type} | {data.style}</p>
     <p class="price">{data.price},00 DKK</p>
@@ -26,6 +22,7 @@ console.log(data);
   h3 {
     text-align: center;
     padding-bottom: 10px;
+    overflow-wrap: break-word;
   }
   p {
     text-align: center;
@@ -47,9 +44,10 @@ console.log(data);
   img {
     margin: 0 auto;
     padding-bottom: 16px;
+    width: 140px;
   }
-  .beer {
-    width: 70%;
+  .beers {
+    width: 120px;
   }
 
   .hide {
