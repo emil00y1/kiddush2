@@ -29,11 +29,12 @@ const { myData } = Astro.props;
 
 <MainLayout id="landing">
   <Header slot="header" />
+  <a href="javascript:void(0)" onclick="goBack()">
   <div class="back_container">
     <span class="arrow"></span>
     <span class="streg"></span>
     <p class="back">Back</p>
-  </div>
+  </div></a>
   <div class="img_container">
     <img
       src={`/img/products/${myData.img}.webp`}
@@ -86,7 +87,7 @@ const { myData } = Astro.props;
   .back_container .streg {
     position: absolute;
     top: 14px;
-    left: 18px;
+    left: 19px;
     display: block;
     width: 24px;
     height: 12px;
@@ -95,8 +96,8 @@ const { myData } = Astro.props;
 
   .back {
     position: absolute;
-    left: 50px;
-    top: -2px;
+    left: 40px;
+    top: 1px;
   }
 
   .brand {
@@ -134,11 +135,12 @@ const { myData } = Astro.props;
 
   .container .next {
     position: relative;
-    top: 50%;
-    left: 80%;
+    top: -8%;
+    left: 75%;
     display: block;
     width: 12px;
     height: 12px;
+    font-size: 24px;
     /* border-top: 2px solid rgb(0, 0, 0);
     border-left: 2px solid rgb(0, 0, 0);
     z-index: 1;
@@ -148,11 +150,12 @@ const { myData } = Astro.props;
 
   .container .prev {
     position: relative;
-    top: 25%;
-    left: 10%;
+    top: 18%;
+    left: 15%;
     display: block;
     width: 12px;
     height: 12px;
+    font-size: 24px;
     /* border-top: 2px solid rgb(0, 0, 0);
     border-left: 2px solid rgb(0, 0, 0);
     z-index: 1;
@@ -166,6 +169,8 @@ const { myData } = Astro.props;
     text-align: center;
     line-height: 0px;
     font-size: 30px;
+    position: relative;
+    top: 25%;
     /* display: none; */
   }
 
@@ -183,6 +188,11 @@ const { myData } = Astro.props;
 </style>
 
 <script type="text/javascript">
+
+function goBack() {
+  history.back();
+}
+
   let quantity = 1;
   const quantityElement = document.getElementById("quantity");
 
