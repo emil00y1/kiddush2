@@ -3,36 +3,40 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Header from "../components/Header.astro";
 ---
 
-<MainLayout title="EVENTS AND COLLABORATIONS">
+<MainLayout title="EVENTS AND COLLABS">
   <Header slot="header" events="active" />
   <p class="introduction">
     Explore our past and upcoming events, collaborations, and celebrations, showcasing how our beer brings people together.<br /><br /> At Kiddush, we believe in the power of community and the transformative
     nature of social events. They are not just occasions to enjoy our exceptional beer, but opportunities to connect, celebrate, and create cherished memories with each other.
   </p>
   <section>
+    <div class="max800">
     <h2>2023</h2>
-    <article>
-      <img src="/img/musikilejet.webp" alt="collab with musik i lejet" />
-      <h3>MUSIK I LEJET</h3><p>
+    <article class="grid_1_1">
+      <img class="left_img" src="/img/musikilejet.webp" alt="collab with musik i lejet" />
+      <h3 class="place_right">MUSIK I LEJET</h3>
+      <p class="place_right">
         We're thrilled to announce that Kiddush Brewery will be serving our beloved beer at this year's Musik I lejet festival!<br /><br />If you're feeling thirsty, this is the perfect opportunity to
         try our flavorful brews, perhaps for the first time. We can't wait to see you there, ready to soak up the festival atmosphere and indulge in the delightful taste of Kiddush beer.<br /><br
         />Cheers to a fantastic time!
       </p>
     </article>
-    <article>
-      <img src="/img/takt.webp" alt="collab with takt" />
-      <h3>TAKT - 3 DAYS OF DESIGN</h3>
-      <p>
+    <article class="grid_1_1">
+      <img class="right_img" src="/img/takt.webp" alt="collab with takt" />
+      <h3 class="place_left">TAKT - 3 DAYS OF DESIGN</h3>
+      <p class="place_left">
         We are thrilled to collaborate with TAKT, a renowned furniture company, for their upcoming event, '3 Days of Design.' As purveyors of fine beer, we are delighted to supply this exciting
         occasion with 240 beers.<br /><br />It is our pleasure to contribute to the event's ambiance and enhance the overall experience with the perfect beverage to complement TAKT's stunning
         furniture designs.
       </p>
     </article>
+  </div>
   </section>
   <section class="bg_alternate">
+    <div class="max800">
     <h2>2022</h2>
-    <article>
-      <img src="/img/gaia.webp" alt="collab with gaia" />
+    <article class="grid_1_1">
+      <img class="left_img" src="/img/gaia.webp" alt="collab with gaia" />
       <h3>GAIA</h3>
       <p>
         In October of 2022, we secured our very first spot at the esteemed local bar, Gaia, right here in Copenhagen.<br /><br />We invite you to visit Gaia and experience the joy of sharing a
@@ -40,8 +44,8 @@ import Header from "../components/Header.astro";
         />So gather your friends, head over to Gaia, and discover the perfect blend of friendship and beer.
       </p>
     </article>
-    <article>
-      <img src="/img/zetland.webp" alt="collab with Zetland" />
+    <article class="grid_1_1">
+      <img class="right_img" src="/img/zetland.webp" alt="collab with Zetland" />
       <h3>Zetland</h3>
       <p>
         Last year, we celebrated a significant milestone with our first-ever collaboration alongside the esteemed news media outlet, Zetland. Together, we crafted a special IPA that merged the flavors
@@ -49,6 +53,7 @@ import Header from "../components/Header.astro";
         Cheers to an exciting collaboration and the beginning of a fruitful relationship!
       </p>
     </article>
+  </div>
   </section>
 </MainLayout>
 
@@ -87,5 +92,37 @@ import Header from "../components/Header.astro";
     text-align: center;
     text-transform: uppercase;
     color: var(--kiddushblack);
+  }
+
+  @media (min-width: 800px){
+    img {
+      max-width: 473px;
+    }
+    .max800 {
+      max-width: 1170px;
+      margin: auto;
+    }
+
+.grid_1_1{
+display: grid;
+grid-template-columns: 1fr 1fr;
+margin: 50px 0px 50px 0px ;
+}
+
+.left_img{
+  grid-column: 1/2;
+      grid-row: 1/3;
+}
+
+.right_img{
+  grid-column: 2/3;
+  grid-row: 1/3;
+}
+
+h3{
+  text-align: left;
+  margin-top: 0px;
+  font-weight: 700;
+}
   }
 </style>
