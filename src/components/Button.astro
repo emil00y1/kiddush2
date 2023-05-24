@@ -52,7 +52,26 @@ const { text, type, href } = Astro.props;
     margin: auto;
   }
 
+  
+
   .extra_margin {
     margin: 30px auto 30px auto;
+  }
+
+  @media (min-width:800px){
+    .index_desk {
+    background: var(--primary);
+    color: var(--background);
+    border-radius: 11px;
+    width: 262px;
+    height: 51px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 7px 24px;
+    gap: 10px;
+    margin: auto;
+  }
   }
 </style>
