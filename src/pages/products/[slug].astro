@@ -35,6 +35,7 @@ const { myData } = Astro.props;
     <span class="streg"></span>
     <p class="back">Back</p>
   </div></a>
+  <div class="indhold">
   <div class="img_container">
     <img
       src={`/img/products/${myData.img}.webp`}
@@ -64,6 +65,7 @@ const { myData } = Astro.props;
     Brewing good beer takes time - enjoy it with care and dedication. Alone, or
     in good company.
   </p>
+</div>
 </MainLayout>
 
 <style>
@@ -74,7 +76,7 @@ const { myData } = Astro.props;
   .back_container .arrow {
     position: absolute;
     top: 15px;
-    left: 20px;
+    left: 14px;
 
     display: block;
     width: 12px;
@@ -87,7 +89,7 @@ const { myData } = Astro.props;
   .back_container .streg {
     position: absolute;
     top: 14px;
-    left: 19px;
+    left: 14px;
     display: block;
     width: 24px;
     height: 12px;
@@ -96,10 +98,14 @@ const { myData } = Astro.props;
 
   .back {
     position: absolute;
-    left: 40px;
+    left: 34px;
     top: 1px;
+    font-size: 23px;
   }
 
+  .indhold{
+    margin-top: 50px;
+  }
   .brand {
     color: var(--text2);
     text-align: center;
@@ -125,6 +131,7 @@ const { myData } = Astro.props;
   .antal {
     display: flex;
     padding: 14px 14px 14px 14px;
+    gap: 14px;
   }
   .container {
     width: 111px;
