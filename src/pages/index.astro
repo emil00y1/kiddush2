@@ -64,7 +64,7 @@ const notComingSoonData = data.filter((item) => item.comingsoon === false);
     </div>
   </div>
   <Banner />
-  <h2>Coming Soon</h2>
+  <h2 class="extra_margintop">Coming Soon</h2>
   <div class="slider">
     <div class="control previous">
       <svg
@@ -184,6 +184,9 @@ const notComingSoonData = data.filter((item) => item.comingsoon === false);
     margin-right: 14px;
   }
 
+  .extra_margintop{
+    margin-top: 2rem;
+  }
   .cards::-webkit-scrollbar {
     width: 0; /* Remove default scrollbar */
     height: 0;
@@ -235,7 +238,8 @@ const notComingSoonData = data.filter((item) => item.comingsoon === false);
   margin-top: 88px;
   
   }
-
+  
+  }
   
 </style>
 
