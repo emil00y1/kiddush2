@@ -32,16 +32,25 @@ const { title, id, type } = Astro.props;
 <style>
   .landing {
     margin-top: 79px;
-    background-image: url(/img/forside.webp);
+    background-image: url(/img/forside2.webp);
     background-repeat: no-repeat;
-    background-position: top left;
+    background-position: center;
     background-size: cover;
-    padding: 15% 0;
+    padding: 10% 0 15%;
   }
 
   @media (min-width: 600px) {
     .landing {
       margin-top: 93px;
+    }
+  }
+  @media (max-width: 450px) {
+    .landing {
+      background-image: url(/img/forside4.webp);
+      background-repeat: no-repeat;
+
+      background-size: cover;
+      padding: 10% 0 15%;
     }
   }
 </style>
