@@ -5,12 +5,16 @@ import Button from "../../components/Button.astro";
 import Header from "../../components/Header.astro";
 
 export async function getStaticPaths() {
-  const data = await fetch("https://syezauaectamogglkmvc.supabase.co/rest/v1/products?order=id.asc", {
-    method: "GET",
-    headers: {
-      apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN5ZXphdWFlY3RhbW9nZ2xrbXZjIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQ0OTcyODUsImV4cCI6MjAwMDA3MzI4NX0.5CbbGAvqETjhd1_tbVm-oa-4F_JHliJV0Xuy_dG2rms",
-    },
-  }).then((response) => response.json());
+  const data = await fetch(
+    "https://syezauaectamogglkmvc.supabase.co/rest/v1/products?order=id.asc",
+    {
+      method: "GET",
+      headers: {
+        apikey:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN5ZXphdWFlY3RhbW9nZ2xrbXZjIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQ0OTcyODUsImV4cCI6MjAwMDA3MzI4NX0.5CbbGAvqETjhd1_tbVm-oa-4F_JHliJV0Xuy_dG2rms",
+      },
+    }
+  ).then((response) => response.json());
 
   return data.map((product) => {
     return {
@@ -31,38 +35,45 @@ const { myData } = Astro.props;
       <span class="streg"></span>
       <p class="back">Back</p>
     </div>
-  </a >
+  </a>
   <div class="indhold">
     <section>
-    <div class="img_container">
-      <img class="product_img" src={`/img/products/${myData.img}.webp`} alt={`Can of ${myData.name}`} />
-    </div>
-   </section>
-   <section>
-    <p class="brand">{myData.brand}</p>
-    <h1 id="h1_slug">{myData.name}</h1>
-    <p class="price">{myData.price + ",00 DKK"}</p>
-    <div class="antal">
-      <div class="container">
-        <span class="prev" onclick="decreaseQuantity()">-</span>
-        <span id="quantity">1</span>
-        <span class="next" onclick="increaseQuantity()">+</span>
+      <div class="img_container">
+        <img
+          class="product_img"
+          src={`/img/products/${myData.img}.webp`}
+          alt={`Can of ${myData.name}`}
+        />
       </div>
-      <Button text="ADD TO CART" href="#" type="index index_desk" />
-    </div>
-    <p>{myData.description}</p>
-    <br />
-    <p class="ingredients">Ingredients</p>
-    <p>{myData.ingredients}</p>
-    <p>{myData.type}</p>
-    <p>Netto 500ml</p>
-    <p>{"Alc." + myData.volume + "% vol."}</p>
-    <br />
-    <p>Brewing good beer takes time - enjoy it with care and dedication. Alone, or in good company.</p>
-   </section>
+    </section>
+    <section>
+      <p class="brand">{myData.brand}</p>
+      <h1 id="h1_slug">{myData.name}</h1>
+      <p class="price">{myData.price + ",00 DKK"}</p>
+      <div class="antal">
+        <div class="container">
+          <span class="prev" onclick="decreaseQuantity()">-</span>
+          <span id="quantity">1</span>
+          <span class="next" onclick="increaseQuantity()">+</span>
+        </div>
+        <Button text="ADD TO CART" href="#" type="index index_desk" />
+      </div>
+      <p>{myData.description}</p>
+      <br />
+      <p class="ingredients">Ingredients</p>
+      <p>{myData.ingredients}</p>
+      <p>{myData.type}</p>
+      <p>Netto 500ml</p>
+      <p>{"Alc." + myData.volume + "% vol."}</p>
+      <br />
+      <p>
+        Brewing good beer takes time - enjoy it with care and dedication. Alone,
+        or in good company.
+      </p>
+    </section>
   </div>
   <section>
-    <h3>Other customers also like </h3>
+    <h3>Other customers also like</h3>
     <p>LAV DET HER I MORGEN!!!!</p>
   </section>
 </MainLayout>
@@ -148,6 +159,7 @@ const { myData } = Astro.props;
     width: 12px;
     height: 12px;
     font-size: 24px;
+    cursor: pointer;
     /* border-top: 2px solid rgb(0, 0, 0);
     border-left: 2px solid rgb(0, 0, 0);
     z-index: 1;
@@ -163,6 +175,7 @@ const { myData } = Astro.props;
     width: 12px;
     height: 12px;
     font-size: 24px;
+    cursor: pointer;
     /* border-top: 2px solid rgb(0, 0, 0);
     border-left: 2px solid rgb(0, 0, 0);
     z-index: 1;
@@ -193,9 +206,8 @@ const { myData } = Astro.props;
     margin-right: 14px;
   }
 
-  @media (min-width:800px){
-
-    .indhold{
+  @media (min-width: 800px) {
+    .indhold {
       display: grid;
       grid-template-columns: 1fr 1fr;
       max-width: 1170px;
@@ -203,44 +215,41 @@ const { myData } = Astro.props;
       padding-bottom: 100px;
     }
 
-    .img_container{
+    .img_container {
       display: flex;
       justify-content: center;
     }
-.product_img{
-  width: 272px;
-}
+    .product_img {
+      width: 272px;
+    }
 
-.back_container{
-  margin-left: 20px;
-}
-.back{
-  top: -2px;
-}
+    .back_container {
+      margin-left: 20px;
+    }
+    .back {
+      top: -2px;
+    }
 
-.brand{
-  text-align: left;
-}
+    .brand {
+      text-align: left;
+    }
 
-#h1_slug{
-  text-align: left;
-  padding-bottom: 0px;
-}
+    #h1_slug {
+      text-align: left;
+      padding-bottom: 0px;
+    }
 
-.price{
-  text-align: left;
-}
+    .price {
+      text-align: left;
+    }
 
-.container {
-    width: 262px;
-    height: 50px;
-    border-radius: 11px;
-    border: 2px solid;
+    .container {
+      width: 262px;
+      height: 50px;
+      border-radius: 11px;
+      border: 2px solid;
+    }
   }
-
-  }
-
-
 </style>
 
 <script type="text/javascript">
