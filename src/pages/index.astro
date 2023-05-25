@@ -5,13 +5,16 @@ import Banner from "../components/Banner.astro";
 import Button from "../components/Button.astro";
 import ProductCard2 from "../components/ProductCard2.astro";
 
-const data = await fetch("https://syezauaectamogglkmvc.supabase.co/rest/v1/products?order=id.asc&category=eq.Beers%20and%20Drinks", {
-  method: "GET",
-  headers: {
-    apikey:
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN5ZXphdWFlY3RhbW9nZ2xrbXZjIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQ0OTcyODUsImV4cCI6MjAwMDA3MzI4NX0.5CbbGAvqETjhd1_tbVm-oa-4F_JHliJV0Xuy_dG2rms",
-  },
-}).then((res) => res.json());
+const data = await fetch(
+  "https://syezauaectamogglkmvc.supabase.co/rest/v1/products?order=id.asc&category=eq.Beers%20and%20Drinks",
+  {
+    method: "GET",
+    headers: {
+      apikey:
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN5ZXphdWFlY3RhbW9nZ2xrbXZjIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQ0OTcyODUsImV4cCI6MjAwMDA3MzI4NX0.5CbbGAvqETjhd1_tbVm-oa-4F_JHliJV0Xuy_dG2rms",
+    },
+  }
+).then((res) => res.json());
 
 const comingSoonData = data.filter((item) => item.comingsoon === true);
 const notComingSoonData = data.filter((item) => item.comingsoon === false);
@@ -20,7 +23,12 @@ const notComingSoonData = data.filter((item) => item.comingsoon === false);
 <MainLayout title="KIDDUSH" id="landing" type="landing">
   <Header slot="header" home="active" />
 
-  <Button text="BUY BEER" href="/shop" type="index extra_margin" slot="after-heading" />
+  <Button
+    text="BUY BEER"
+    href="/shop"
+    type="index extra_margin"
+    slot="after-heading"
+  />
   <div class="slider">
     <div class="control previous">
       <svg
@@ -34,7 +42,8 @@ const notComingSoonData = data.filter((item) => item.comingsoon === false);
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
-        class="feather feather-chevron-left"><polyline points="15 18 9 12 15 6"></polyline></svg
+        class="feather feather-chevron-left"
+        ><polyline points="15 18 9 12 15 6"></polyline></svg
       >
     </div>
     <div class="cards">
@@ -55,7 +64,8 @@ const notComingSoonData = data.filter((item) => item.comingsoon === false);
         stroke="currentColor"
         stroke-width="2"
         stroke-linecap="round"
-        stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg
+        stroke-linejoin="round"
+        ><polyline points="9 18 15 12 9 6"></polyline></svg
       >
     </div>
   </div>
@@ -74,7 +84,8 @@ const notComingSoonData = data.filter((item) => item.comingsoon === false);
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
-        class="feather feather-chevron-left"><polyline points="15 18 9 12 15 6"></polyline></svg
+        class="feather feather-chevron-left"
+        ><polyline points="15 18 9 12 15 6"></polyline></svg
       >
     </div>
     <div class="cards">
@@ -95,23 +106,31 @@ const notComingSoonData = data.filter((item) => item.comingsoon === false);
         stroke="currentColor"
         stroke-width="2"
         stroke-linecap="round"
-        stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg
+        stroke-linejoin="round"
+        ><polyline points="9 18 15 12 9 6"></polyline></svg
       >
     </div>
   </div>
   <section class="events_index">
     <div class="right_img">
-      <img class="emil_mil" src="/img/emil_musik_i_lejet.webp" alt="musik i lejet emil" />
+      <img
+        class="emil_mil"
+        src="/img/emil_musik_i_lejet.webp"
+        alt="musik i lejet emil"
+      />
     </div>
     <div class="place_left">
       <h2>future events</h2>
       <p>
-        Join us this summer at MUSIK I LEJET, where you can immerse yourself in incredible music and unforgettable moments. Make sure to stop by the Kiddush Beer booth and grab a refreshing pint to
-        complement the fantastic tunes.
+        Join us this summer at MUSIK I LEJET, where you can immerse yourself in
+        incredible music and unforgettable moments. Make sure to stop by the
+        Kiddush Beer booth and grab a refreshing pint to complement the
+        fantastic tunes.
 
         <br /><br />
 
-        Get ready for an experience that harmonizes the best of music, community, and ice-cold Kiddush beer.
+        Get ready for an experience that harmonizes the best of music,
+        community, and ice-cold Kiddush beer.
       </p>
       <div>
         <Button text="SEE EVENTS" href="/events" type="index extra_margin" />
@@ -136,6 +155,7 @@ const notComingSoonData = data.filter((item) => item.comingsoon === false);
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
     flex-wrap: nowrap; /* Added */
+    scrollbar-width: none;
   }
 
   .control {
@@ -238,7 +258,11 @@ const notComingSoonData = data.filter((item) => item.comingsoon === false);
     const cardsContainer = slider.querySelector(".cards");
     const previousBtn = slider.querySelector(".previous");
     const nextBtn = slider.querySelector(".next");
-    const cardWidth = cardsContainer.firstElementChild.offsetWidth + parseFloat(getComputedStyle(cardsContainer.firstElementChild).marginRight);
+    const cardWidth =
+      cardsContainer.firstElementChild.offsetWidth +
+      parseFloat(
+        getComputedStyle(cardsContainer.firstElementChild).marginRight
+      );
     let isScrolling = false; // Track scrolling state
 
     previousBtn.addEventListener("click", () => {
@@ -261,8 +285,12 @@ const notComingSoonData = data.filter((item) => item.comingsoon === false);
     nextBtn.addEventListener("click", () => {
       if (!isScrolling) {
         isScrolling = true;
-        const maxScrollLeft = cardsContainer.scrollWidth - cardsContainer.offsetWidth;
-        const scrollAmount = Math.min(cardsContainer.scrollLeft + cardWidth, maxScrollLeft);
+        const maxScrollLeft =
+          cardsContainer.scrollWidth - cardsContainer.offsetWidth;
+        const scrollAmount = Math.min(
+          cardsContainer.scrollLeft + cardWidth,
+          maxScrollLeft
+        );
 
         if (scrollAmount === maxScrollLeft) {
           // Scroll back to the beginning of the slider
