@@ -20,10 +20,12 @@ console.log(data);
     </div>
   </div>
   <div class="cardcontent">
-    <img src={`/img/archive/${data.img}.webp`} alt="Label" />
-    <h2 class={data.slug}>{data.name}</h2>
-    <p class={`type ${data.slug}`}>{data.type}</p>
-    <p class={data.slug}>{data.description}</p>
+    <img src={`/img/archive/${data.img}.webp`} alt="Label" class={`label label${data.id}`} />
+    <div>
+      <h2 class={data.slug}>{data.name}</h2>
+      <p class={`type ${data.slug}`}>{data.type}</p>
+      <p class={data.slug}>{data.description}</p>
+    </div>
   </div>
 </article>
 
@@ -37,6 +39,7 @@ console.log(data);
 
   article {
     padding: 14px;
+
     /* max-height: 134px;
     overflow: hidden; */
   }
@@ -50,12 +53,16 @@ console.log(data);
     justify-content: space-between;
     align-items: center;
     z-index: 3;
+    max-width: 1048px;
+    margin: auto;
   }
   .cardcontent {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
     visibility: hidden;
+    max-width: 1048px;
+    margin: auto;
   }
 
   .flex {
@@ -107,23 +114,6 @@ console.log(data);
     transform: translate(14px, 13px) rotate(-45deg);
   }
 
-  /* .barbox.active .bar1 {
-    width: 52px;
-    transform: translate(-8px, 22px) rotate(135deg);
-  }
-
-  .barbox.active .bar2 {
-    width: 52px;
-    transform: translate(-8px, 22px) rotate(-135deg);
-  } */
-  /* .barbox.active .bar1 {
-    transform: translate(14px, 13px) rotate(45deg);
-  }
-
-  .barbox.active .bar2 {
-    transform: translate(-2px, 13px) rotate(-45deg);
-  } */
-
   .barbox.active .bar1 {
     transform: translate(6px, 13px) rotate(45deg);
   }
@@ -135,6 +125,36 @@ console.log(data);
   .barbox .bar::after {
     transition: transform 0.2s ease-in-out;
   }
+
+  @media (min-width: 700px) {
+    .cardcontent {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: flex-end;
+    }
+
+    .label2,
+    .label4,
+    .label6.,
+    .label8 {
+      order: 1;
+    }
+
+    .label {
+      object-fit: contain;
+    }
+  }
+
+  @media (min-width: 1048px) {
+    .cardcontent {
+      display: flex;
+    }
+    .label {
+      width: 504px;
+    }
+  }
+
   /******************************/
   p.limone,
   h3.limone,
@@ -238,15 +258,7 @@ console.log(data);
   }
 
   article.passionfruit {
-    background: linear-gradient(
-      180deg,
-      #9e84c1 0%,
-      #a87cb0 26.49%,
-      #c06f96 40.79%,
-      #cc6685 53.57%,
-      #e44a5c 76.28%,
-      #e84050 100%
-    );
+    background: linear-gradient(180deg, #9e84c1 0%, #a87cb0 26.49%, #c06f96 40.79%, #cc6685 53.57%, #e44a5c 76.28%, #e84050 100%);
   }
 
   .bar.passionfruit {
