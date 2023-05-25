@@ -18,7 +18,9 @@ const data = await fetch("https://syezauaectamogglkmvc.supabase.co/rest/v1/produ
   <Header slot="header" shop="active" />
   <div class="buttonNavigation">
     <Button text="Beers and Drinks" type="filter" />
+    <div class="bar"></div>
     <Button text="Merch" type="filter" />
+    <div class="bar"></div>
     <Button text="View all" type="filter" />
   </div>
   <section>
@@ -36,15 +38,17 @@ const data = await fetch("https://syezauaectamogglkmvc.supabase.co/rest/v1/produ
     margin: 0 auto;
     display: flex;
     justify-content: space-around;
+    max-width: 1170px;
+    align-items: center;
   }
   section {
-    /* display: grid;
-    grid-template-columns: 1fr 1fr; */
-    display: flex;
-    flex-flow: row wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* display: flex;
+    flex-flow: row wrap; */
     padding: 0 14px;
     justify-content: space-between;
-    gap: 8px;
+    gap: 14px;
     max-width: 1048px;
     margin: 70px auto 0;
   }
@@ -53,6 +57,22 @@ const data = await fetch("https://syezauaectamogglkmvc.supabase.co/rest/v1/produ
     text-align: center;
     text-transform: uppercase;
     color: var(--kiddushblack);
+  }
+  @media (min-width: 600px) {
+    .bar {
+      background-color: var(--kiddushblack);
+      width: 2px;
+      height: 35px;
+    }
+    section {
+      gap: 70px;
+    }
+  }
+
+  @media (min-width: 650px) {
+    section {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
   }
 </style>
 
