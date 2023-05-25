@@ -72,7 +72,7 @@ const notComingSoonData = data.filter((item) => item.comingsoon === false);
   <Banner />
   <h2 class="extra_margintop">Coming Soon</h2>
   <div class="slider">
-    <div class="control previous">
+    <div class="control previous2">
       <svg
         class="chevron"
         xmlns="http://www.w3.org/2000/svg"
@@ -95,7 +95,7 @@ const notComingSoonData = data.filter((item) => item.comingsoon === false);
         })
       }
     </div>
-    <div class="control next">
+    <div class="control next2">
       <svg
         class="chevron"
         xmlns="http://www.w3.org/2000/svg"
@@ -170,14 +170,16 @@ const notComingSoonData = data.filter((item) => item.comingsoon === false);
     cursor: pointer;
   }
 
-  .previous {
+  .previous,
+  .previous2 {
     left: 10px;
   }
 
   .chevron {
     color: var(--kiddushblack);
   }
-  .next {
+  .next,
+  .next2 {
     right: 10px;
   }
 
@@ -212,6 +214,11 @@ const notComingSoonData = data.filter((item) => item.comingsoon === false);
   @media (min-width: 800px) {
     .cards {
       max-width: 650px;
+    }
+
+    .next2,
+    .previous2 {
+      display: none;
     }
 
     .events_index {
