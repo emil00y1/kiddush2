@@ -180,6 +180,7 @@ const notComingSoonData = data.filter((item) => item.comingsoon === false);
   .next {
     right: 10px;
   }
+
   img {
     width: 100vw;
   }
@@ -258,20 +259,13 @@ const notComingSoonData = data.filter((item) => item.comingsoon === false);
     const cardsContainer = slider.querySelector(".cards");
     const previousBtn = slider.querySelector(".previous");
     const nextBtn = slider.querySelector(".next");
-    const cardWidth =
-      cardsContainer.firstElementChild.offsetWidth +
-      parseFloat(
-        getComputedStyle(cardsContainer.firstElementChild).marginRight
-      );
     let isScrolling = false; // Track scrolling state
 
     previousBtn.addEventListener("click", () => {
       if (!isScrolling) {
         isScrolling = true;
-        const scrollAmount = Math.max(cardsContainer.scrollLeft - cardWidth, 0);
-
-        cardsContainer.scrollTo({
-          left: scrollAmount,
+        cardsContainer.scrollBy({
+          left: -cardsContainer.offsetWidth,
           behavior: "smooth",
         });
 
@@ -288,7 +282,7 @@ const notComingSoonData = data.filter((item) => item.comingsoon === false);
         const maxScrollLeft =
           cardsContainer.scrollWidth - cardsContainer.offsetWidth;
         const scrollAmount = Math.min(
-          cardsContainer.scrollLeft + cardWidth,
+          cardsContainer.scrollLeft + cardsContainer.offsetWidth,
           maxScrollLeft
         );
 
@@ -299,8 +293,8 @@ const notComingSoonData = data.filter((item) => item.comingsoon === false);
             behavior: "smooth",
           });
         } else {
-          cardsContainer.scrollTo({
-            left: scrollAmount,
+          cardsContainer.scrollBy({
+            left: cardsContainer.offsetWidth,
             behavior: "smooth",
           });
         }
