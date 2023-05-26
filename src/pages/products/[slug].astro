@@ -27,7 +27,7 @@ export async function getStaticPaths() {
 const { myData } = Astro.props;
 ---
 
-<MainLayout id="landing">
+<MainLayout id="landing" title={myData.name}>
   <Header slot="header" />
   <a href="javascript:void(0)" onclick="goBack()">
     <div class="back_container">
