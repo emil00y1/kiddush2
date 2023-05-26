@@ -192,10 +192,10 @@ import Header from "../components/Header.astro";
       color: var(--kiddushblack);
     }
 
-    iframe {
+    /* iframe {
       width: 350px;
       height: 197px;
-    }
+    } */
     @media (min-width: 800px) {
       .intro {
         display: flex;
@@ -249,13 +249,36 @@ import Header from "../components/Header.astro";
         order: -1;
         margin-top: 0px;
         width: 560px;
-        height: 315px;
+        height: 250px;
+      }
+
+      svg {
+        min-width: 300px;
+      }
+    }
+
+    @media (max-width: 1170px) {
+      .jacob_img,
+      .lucas_img {
+        align-self: center;
+      }
+    }
+    @media (min-width: 450px) and (max-width: 799px) {
+      .jacob_img,
+      .lucas_img {
+        max-width: 500px;
+        justify-self: center;
+        margin: 34px auto 34px auto;
       }
     }
 
     @media (max-width: 800px) {
       svg {
         display: none;
+      }
+      iframe {
+        width: 100%;
+        aspect-ratio: 16/9;
       }
     }
   </style>

@@ -183,10 +183,6 @@ const notComingSoonData = data.filter((item) => item.comingsoon === false);
     right: 10px;
   }
 
-  img {
-    width: 100vw;
-  }
-
   h2 {
     margin: 10px 0px 10px 0px;
     text-align: center;
@@ -208,6 +204,9 @@ const notComingSoonData = data.filter((item) => item.comingsoon === false);
   @media (max-width: 800px) {
     .cards {
       max-width: 190px;
+    }
+    img {
+      width: 100vw;
     }
   }
 
@@ -237,7 +236,8 @@ const notComingSoonData = data.filter((item) => item.comingsoon === false);
     }
 
     .emil_mil {
-      width: 565px;
+      max-width: 565px;
+      align-self: flex-start;
     }
 
     .place_left {
