@@ -34,9 +34,14 @@ const { text, type, href } = Astro.props;
     padding: 0;
   }
 
+  .filter:hover{
+    color: var(--primary);
+    transition: 0.2s ease-in-out;
+  }
   .filter_active {
     color: var(--primary);
   }
+
 
   .index {
     background: var(--primary);
