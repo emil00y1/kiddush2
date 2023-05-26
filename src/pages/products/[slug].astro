@@ -72,19 +72,93 @@ const { myData } = Astro.props;
       </p>
     </section>
   </div>
-  <section>
+  <section class="others_container">
     <h3>Other customers also like</h3>
-    <div>
-      <!-- {
-        data.map((product) => {
-          return <ProductCard data={product} />;
-        })
-      } -->
+    <div class="product_view">
+      <article class="product_card">
+        <a href="/products/vabrus"
+          ><img
+            class="other_product"
+            src="/img/products/darker.webp"
+            alt="Can of Vårbrus"
+          />
+          <h3>Vårbrus</h3>
+        </a>
+      </article>
+      <article class="product_card">
+        <a href="/products/sorachi"
+          ><img
+            class="other_product"
+            src="/img/products/sorachi.webp"
+            alt="Can of Sorachi"
+          />
+          <h3>Sorachi.</h3>
+        </a>
+      </article>
+      <article class="product_card">
+        <a href="/products/palelagerblend"
+          ><img
+            class="other_product"
+            src="/img/products/blend.webp"
+            alt="Can of Blend"
+          />
+          <h3>Blend</h3>
+        </a>
+      </article>
+      <article class="product_card">
+        <a href="/products/blaest"
+          ><img
+            class="other_product"
+            src="/img/products/blaest.webp"
+            alt="Can of Blæst"
+          />
+          <h3>Blæst.</h3>
+        </a>
+      </article>
+      <article class="product_card">
+        <a href="/products/pearlypeach"
+          ><img
+            class="other_product"
+            src="/img/products/peach.webp"
+            alt="Can of Pearly Peach"
+          />
+          <h3>Pearly Peach</h3>
+        </a>
+      </article>
     </div>
   </section>
 </MainLayout>
 
 <style>
+  h3 {
+    margin-bottom: 65px;
+    font-size: 20px;
+  }
+  .others_container {
+    max-width: 1170px;
+    margin: auto;
+    margin-top: 100px;
+  }
+  .product_view {
+    display: flex;
+    justify-content: space-between;
+  }
+  .product_card a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product_card {
+    max-width: 190px;
+  }
+
+  .other_product {
+    padding-bottom: 16px;
+    width: 140px;
+    align-self: auto;
+  }
+
   .back_container {
     position: relative;
     display: flex;
@@ -210,6 +284,12 @@ const { myData } = Astro.props;
   p {
     margin-left: 14px;
     margin-right: 14px;
+  }
+
+  @media (max-width: 800px) {
+    .others_container {
+      display: none;
+    }
   }
 
   @media (min-width: 800px) {
