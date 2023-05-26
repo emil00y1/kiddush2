@@ -60,15 +60,27 @@ const { myData } = Astro.props;
       </div>
       <p>{myData.description}</p>
       <br />
-      <p class="ingredients">Ingredients</p>
+      <p class="ingredients">
+        {myData.category === "Beers and Drinks" ? "Ingredients" : ""}
+      </p>
       <p>{myData.ingredients}</p>
+      <br />
       <p>{myData.type}</p>
-      <p>Netto 500ml</p>
-      <p>{"Alc." + myData.volume + "% vol."}</p>
+      <p>{myData.category === "Beers and Drinks" ? "Netto 500ml" : ""}</p>
+      <p>
+        {
+          myData.category === "Beers and Drinks"
+            ? `Alc. ${myData.volume}% vol.`
+            : ""
+        }
+      </p>
       <br />
       <p>
-        Brewing good beer takes time - enjoy it with care and dedication. Alone,
-        or in good company.
+        {
+          myData.category === "Beers and Drinks"
+            ? "Brewing good beer takes time - enjoy it with care and dedication. Alone, or in good company."
+            : ""
+        }
       </p>
     </section>
   </div>
