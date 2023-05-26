@@ -3,19 +3,32 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Header from "../components/Header.astro";
 ---
 
-<MainLayout title="FACES OF KIDDUSH">
+<MainLayout title="FACES OF KIDDUSH" headline="FACES OF KIDDUSH">
   <Header slot="header" about="active" />
 
   <div class="max800 intro">
     <div>
-      <p>Kiddush started as a wineclub in 2021 and has, since then developed into a beer breweri. We are producing the beer ourselves in our little breweri in the Northern region of Zealand.</p>
       <p>
-        Our passion for brewing beer stems from our desire to bring people together and create a sense of community. We believe that there's something special about sharing a pint of delicious,
-        locally-brewed beer with friends and loved ones, and that's what drives us to keep experimenting and perfecting our craft.
+        Kiddush started as a wineclub in 2021 and has, since then developed into
+        a beer breweri. We are producing the beer ourselves in our little
+        breweri in the Northern region of Zealand.
+      </p>
+      <p>
+        Our passion for brewing beer stems from our desire to bring people
+        together and create a sense of community. We believe that there's
+        something special about sharing a pint of delicious, locally-brewed beer
+        with friends and loved ones, and that's what drives us to keep
+        experimenting and perfecting our craft.
       </p>
     </div>
 
-    <svg width="262" height="327" viewBox="0 0 262 327" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      width="262"
+      height="327"
+      viewBox="0 0 262 327"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
         d="M94.297 140.236C93.6051 140.236 92.9327 139.871 92.5727 139.226C92.0398 138.275 92.3802 137.072 93.3316 136.539C96.32 134.865 99.1911 132.906 101.861 130.716C107.941 125.729 112.863 119.705 116.49 112.804C116.998 111.839 118.192 111.468 119.158 111.976C120.123 112.484 120.494 113.678 119.986 114.643C116.114 122.013 110.857 128.45 104.364 133.771C101.513 136.109 98.4489 138.199 95.2597 139.985C94.9555 140.155 94.6235 140.236 94.297 140.236Z"
         fill="#0037FF"></path>
@@ -34,8 +47,12 @@ import Header from "../components/Header.astro";
       <path
         d="M99.2253 225.765C84.3005 225.765 75.0427 213.9 74.0271 212.536C73.3769 211.659 73.5583 210.423 74.4344 209.773C75.3105 209.123 76.5466 209.304 77.1967 210.181C78.0979 211.392 86.3792 222.006 99.5797 221.813C108.43 221.685 114.806 216.802 115.994 215.825C118.037 214.146 119.817 212.162 121.282 209.927C128.905 198.313 126.179 182.718 115.079 174.4L113.977 173.658L107.077 168.951C83.8681 152.906 70.0259 126.527 70.0259 98.3724C70.0259 80.5395 75.45 63.4432 85.7096 48.9335C86.3402 48.0434 87.5707 47.8313 88.4636 48.4619C89.3536 49.0926 89.5657 50.3231 88.9351 51.216C79.1498 65.056 73.9768 81.3626 73.9768 98.3752C73.9768 125.232 87.1828 150.398 109.306 165.692L110.403 166.431L117.406 171.214C130.208 180.773 133.363 198.732 124.586 212.103C122.9 214.67 120.855 216.953 118.503 218.884C117.136 220.008 109.803 225.622 99.6383 225.77C99.5015 225.77 99.362 225.773 99.2253 225.773V225.765Z"
         fill="#0037FF"></path>
-      <path d="M262 262.011H0V0H262V262.011ZM4.1853 257.826H257.815V4.18548H4.1853V257.826Z" fill="#0037FF"></path>
-      <path d="M262 326.468H0V257.826H262V326.468ZM4.1853 322.282H257.815V262.011H4.1853V322.282Z" fill="#0037FF"></path>
+      <path
+        d="M262 262.011H0V0H262V262.011ZM4.1853 257.826H257.815V4.18548H4.1853V257.826Z"
+        fill="#0037FF"></path>
+      <path
+        d="M262 326.468H0V257.826H262V326.468ZM4.1853 322.282H257.815V262.011H4.1853V322.282Z"
+        fill="#0037FF"></path>
       <path
         d="M46.9089 281.387C49.1215 279.852 50.5585 278.962 51.1835 278.736C51.8001 278.513 52.3721 278.399 52.8771 278.399C53.5328 278.399 53.9318 278.708 54.1327 279.378C54.4034 280.263 55.0507 280.731 55.9994 280.731C56.5853 280.731 57.1043 280.555 57.5424 280.212C57.9999 279.852 58.2315 279.372 58.2315 278.784C58.2315 278.036 57.8939 277.419 57.2243 276.95C56.5853 276.507 55.7817 276.281 54.8303 276.281C52.5674 276.281 49.7019 277.481 46.3202 279.85C43.1589 282.062 39.127 285.492 34.3251 290.048L36.8697 282.944C37.5338 281.128 38.05 279.981 38.4099 279.537C38.7531 279.113 39.2219 278.803 39.7994 278.622C40.4049 278.432 41.2085 278.334 42.1907 278.334H42.386L42.944 276.791H28.9512L28.3931 278.334H29.7547C31.7413 278.334 32.7486 278.753 32.7486 279.573C32.7486 279.805 32.6147 280.444 31.9785 282.174L25.4076 300.462C24.8607 301.946 24.431 302.917 24.1325 303.352C23.8535 303.76 23.354 304.109 22.6481 304.385C21.9226 304.669 21.0437 304.815 20.0337 304.815H19.8383L19.2803 306.358H33.3764L33.9344 304.815H33.5382C31.0801 304.815 29.8328 304.231 29.8328 303.082C29.8328 302.87 29.9584 302.267 30.5527 300.61L31.8223 297.099C32.5673 295.009 33.2453 293.645 33.8396 293.042C34.4172 292.456 35.1817 292.174 36.1778 292.174C37.1739 292.174 37.9579 292.459 38.5801 293.023C39.2024 293.586 39.5037 294.387 39.5037 295.467C39.5037 296.31 39.3028 297.51 38.9038 299.033C38.5048 300.582 38.3123 301.631 38.3123 302.248C38.3123 303.392 38.7587 304.404 39.6404 305.261C40.5194 306.115 41.8642 306.547 43.6415 306.547C44.9669 306.547 46.1332 306.285 47.1098 305.766C48.092 305.244 48.8927 304.452 49.4926 303.414L49.7326 302.995H47.8798L47.7962 303.09C47.4837 303.445 47.1293 303.718 46.7443 303.899C46.362 304.081 45.9323 304.173 45.4663 304.173C44.2721 304.173 43.7141 303.623 43.7141 302.44C43.7141 302.141 43.7476 301.759 43.8118 301.302C44.0015 299.934 44.0936 298.963 44.0936 298.333C44.0936 296.003 43.4546 294.128 42.1934 292.752C40.9267 291.371 39.2246 290.673 37.1404 290.673C36.6883 290.673 36.1973 290.723 35.6727 290.824C36.281 290.243 37.4083 289.206 39.4312 287.395C42.1684 284.948 44.6823 282.925 46.9033 281.384L46.9089 281.387Z"
         fill="#0037FF"></path>
@@ -62,27 +79,42 @@ import Header from "../components/Header.astro";
   <section class="bg_alternate">
     <div class="max800 jacob">
       <h2 class="place_right">JACOB</h2>
-      <img class="jacob_img" src="/img/portraitjacob.webp" alt="potrait of co-owner, Jacob" />
+      <img
+        class="jacob_img"
+        src="/img/portraitjacob.webp"
+        alt="potrait of co-owner, Jacob"
+      />
       <p>
-        Jacob is 24 years old and started Kiddush in 2021 . It all began when Jacob got tired of everything being so fancy while working as a cellare. Gathering people around good beer for a
-        reasonable price became a misson.
+        Jacob is 24 years old and started Kiddush in 2021 . It all began when
+        Jacob got tired of everything being so fancy while working as a cellare.
+        Gathering people around good beer for a reasonable price became a
+        misson.
         <br />
         <br />
-        Jacob has a good sense for graphic design and does’nt put anything in production that he can’t stand by. A thouroughly developed product from beginning to end is the most important thing for Jakob
-        as co-owner of Kiddush.
+        Jacob has a good sense for graphic design and does’nt put anything in production
+        that he can’t stand by. A thouroughly developed product from beginning to
+        end is the most important thing for Jakob as co-owner of Kiddush.
       </p>
     </div>
   </section>
   <section>
     <div class="max800 lucas">
       <h2 class="place_left">LUCAS</h2>
-      <img class="lucas_img" src="/img/portraitlucas.webp" alt="portrait of co-owner, Lucas" />
+      <img
+        class="lucas_img"
+        src="/img/portraitlucas.webp"
+        alt="portrait of co-owner, Lucas"
+      />
       <p>
-        Lucas is 25 years old and grew up in Østerbro, Copenhagen. Good food and a healthy thirst has always been a part of Lucas’ persona. With a passion for brewing and a knack for experimentation,
-        he brings a unique and creative perspective to the brewery's operations.
+        Lucas is 25 years old and grew up in Østerbro, Copenhagen. Good food and
+        a healthy thirst has always been a part of Lucas’ persona. With a
+        passion for brewing and a knack for experimentation, he brings a unique
+        and creative perspective to the brewery's operations.
         <br />
         <br />
-        His dedication to quality ensures that every sip of Kiddush beer is a delight for the taste buds, and his enthusiasm for community-building makes him a natural fit for the company's mission.
+        His dedication to quality ensures that every sip of Kiddush beer is a delight
+        for the taste buds, and his enthusiasm for community-building makes him a
+        natural fit for the company's mission.
       </p>
     </div>
   </section>
@@ -91,8 +123,11 @@ import Header from "../components/Header.astro";
       <div>
         <h3>Behind the Scenes at Kiddush</h3>
         <p>
-          Join us as we take you through the brewing process, introduce you to our team, and share our passion for creating delicious, community-driven beer. You'll get an inside look at where we
-          meticulously craft each batch of beer to perfection and get to see our co-founders, who share their story and vision for Kiddush
+          Join us as we take you through the brewing process, introduce you to
+          our team, and share our passion for creating delicious,
+          community-driven beer. You'll get an inside look at where we
+          meticulously craft each batch of beer to perfection and get to see our
+          co-founders, who share their story and vision for Kiddush
         </p>
       </div>
       <iframe

@@ -2,7 +2,7 @@
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import "../styles/main.css";
-const { title, id, type } = Astro.props;
+const { title, id, type, headline } = Astro.props;
 ---
 
 <html lang="en">
@@ -20,7 +20,7 @@ const { title, id, type } = Astro.props;
     <slot name="header" />
     <main>
       <section class={type}>
-        <h1 id={id}>{title}</h1>
+        <h1 id={id}>{headline}</h1>
         <slot name="after-heading" />
       </section>
       <slot />

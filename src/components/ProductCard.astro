@@ -5,8 +5,12 @@ console.log(data);
 ---
 
 <article data-category={data.category} class="product_card">
-  <a href={`products/${data.slug}`}
-    ><img src={`/img/products/${data.img}.webp`} alt={`Can of ${data.name}`} class=`${data.css}` />
+  <a href={`/products/${data.slug}`}
+    ><img
+      src={`/img/products/${data.img}.webp`}
+      alt={`Can of ${data.name}`}
+      class=`${data.css}`
+    />
     <h3>{data.name}</h3>
     <p class="info">{data.type} | {data.style}</p>
     <p class="price">{data.price},00 DKK</p>

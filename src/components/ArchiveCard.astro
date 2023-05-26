@@ -20,7 +20,11 @@ console.log(data);
     </div>
   </div>
   <div class="cardcontent">
-    <img src={`/img/archive/${data.img}.webp`} alt="Label" class={`label label${data.id}`} />
+    <img
+      src={`/img/archive/${data.img}.webp`}
+      alt="Label"
+      class={`label label${data.id}`}
+    />
     <div>
       <h2 class={data.slug}>{data.name}</h2>
       <p class={`type ${data.slug}`}>{data.type}</p>
@@ -59,7 +63,7 @@ console.log(data);
   .cardcontent {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease;
+    transition: 0.3s ease;
     visibility: hidden;
     max-width: 1048px;
     margin: auto;
@@ -132,6 +136,7 @@ console.log(data);
       grid-template-columns: 1fr 1fr;
       gap: 40px;
       align-items: flex-end;
+      transition: 0.4s ease;
     }
 
     .label2,
@@ -258,7 +263,15 @@ console.log(data);
   }
 
   article.passionfruit {
-    background: linear-gradient(180deg, #9e84c1 0%, #a87cb0 26.49%, #c06f96 40.79%, #cc6685 53.57%, #e44a5c 76.28%, #e84050 100%);
+    background: linear-gradient(
+      180deg,
+      #9e84c1 0%,
+      #a87cb0 26.49%,
+      #c06f96 40.79%,
+      #cc6685 53.57%,
+      #e44a5c 76.28%,
+      #e84050 100%
+    );
   }
 
   .bar.passionfruit {

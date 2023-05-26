@@ -27,7 +27,7 @@ export async function getStaticPaths() {
 const { myData } = Astro.props;
 ---
 
-<MainLayout id="landing">
+<MainLayout title={myData.name} id="landing">
   <Header slot="header" />
   <a href="javascript:void(0)" onclick="goBack()">
     <div class="back_container">
@@ -74,7 +74,13 @@ const { myData } = Astro.props;
   </div>
   <section>
     <h3>Other customers also like</h3>
-    <p>LAV DET HER I MORGEN!!!!</p>
+    <div>
+      <!-- {
+        data.map((product) => {
+          return <ProductCard data={product} />;
+        })
+      } -->
+    </div>
   </section>
 </MainLayout>
 
