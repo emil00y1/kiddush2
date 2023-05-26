@@ -131,8 +131,6 @@ import Header from "../components/Header.astro";
         </p>
       </div>
       <iframe
-        width="560"
-        height="315"
         src="https://www.youtube-nocookie.com/embed/mgFe7FxhA5o"
         title="YouTube video player"
         frameborder="0"
@@ -194,6 +192,11 @@ import Header from "../components/Header.astro";
       color: var(--kiddushblack);
     }
 
+    iframe{
+        width:350px;
+        height:197px;
+
+    }
     @media (min-width: 800px) {
       .intro {
         display: flex;
@@ -246,6 +249,9 @@ import Header from "../components/Header.astro";
       iframe {
         order: -1;
         margin-top: 0px;
+        width:560px;
+        height:315px;
+
       }
     }
 
