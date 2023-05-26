@@ -27,7 +27,7 @@ export async function getStaticPaths() {
 const { myData } = Astro.props;
 ---
 
-<MainLayout title={myData.name} id="landing">
+<MainLayout id="landing">
   <Header slot="header" />
   <a href="javascript:void(0)" onclick="goBack()">
     <div class="back_container">
@@ -292,6 +292,19 @@ const { myData } = Astro.props;
     }
   }
 
+  @media (min-width: 450px) {
+    .antal {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      align-items: center;
+      text-align: center;
+    }
+    .container {
+      width: 200px;
+      grid-column: 2/3;
+    }
+  }
+
   @media (min-width: 800px) {
     .indhold {
       display: grid;
@@ -325,6 +338,11 @@ const { myData } = Astro.props;
       padding-bottom: 0px;
     }
 
+    .antal {
+      align-items: center;
+      text-align: center;
+    }
+
     .price {
       text-align: left;
     }
@@ -334,6 +352,7 @@ const { myData } = Astro.props;
       height: 50px;
       border-radius: 11px;
       border: 2px solid;
+      grid-column: 1/3;
     }
   }
 </style>
