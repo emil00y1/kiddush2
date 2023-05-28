@@ -6,11 +6,7 @@ console.log(data);
 
 <article data-category={data.category} class="product_card">
   <a href={`/products/${data.slug}`}
-    ><img
-      src={`/img/products/${data.img}.webp`}
-      alt={`Can of ${data.name}`}
-      class=`${data.category}`
-    />
+    ><img src={`/img/products/${data.img}.webp`} alt={`Can of ${data.name}`} class=`${data.category}` />
     <h3>{data.name}</h3>
     <p class="info">{data.type} | {data.style}</p>
   </a>
@@ -28,6 +24,7 @@ console.log(data);
   h3 {
     text-align: center;
     padding-bottom: 10px;
+    font-size: 24px;
   }
   p {
     text-align: center;
