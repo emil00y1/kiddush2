@@ -15,7 +15,7 @@ const data = await fetch(
     },
   }
 ).then((res) => res.json());
-
+ 
 const comingSoonData = data.filter((item) => item.comingsoon === true);
 const notComingSoonData = data.filter((item) => item.comingsoon === false);
 ---
